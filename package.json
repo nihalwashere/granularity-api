@@ -4,8 +4,7 @@
   "description": "Backend for Granularity!",
   "main": "server.js",
   "scripts": {
-    "start": "nf start",
-    "dev": "node server.js",
+    "start": "node server.js",
     "test": "jest src/tests --runInBand --coverage",
     "lint": "eslint --ext .js .",
     "prettier": "prettier --write ."
@@ -28,7 +27,6 @@
     "npm": "6.14.11"
   },
   "dependencies": {
-    "@getgranularity/email-engine": "^1.0.3",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
