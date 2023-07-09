@@ -22,13 +22,8 @@ app.use(
 app.use(bodyParser.json());
 
 const whitelist = [
-  "https://app.getgranularity.com",
-  "https://www.getgranularity.com",
-  "https://getgranularity.com",
-  "https://api.getgranularity.com",
-  "https://granularity-dev.herokuapp.com",
-  "https://dev.getgranularity.com",
-  "https://app-dev.getgranularity.com",
+  "https://granularity-app.nihalwashere.xyz",
+  "https://granularity-web.nihalwashere.xyz",
   "http://localhost:3000"
 ];
 
