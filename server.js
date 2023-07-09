@@ -81,10 +81,6 @@ app.get("/logo_512.png", (req, res) => {
 app.get("/embed.js", (req, res) => {
   if (ENV === "PROD") {
     res.status(200).sendFile(path.join(__dirname, PUBLIC_DIR, "embed.min.js"));
-  } else if (ENV === "DEVELOP") {
-    res
-      .status(200)
-      .sendFile(path.join(__dirname, PUBLIC_DIR, "embed-dev.min.js"));
   } else {
     // LOCAL
     res.status(200).sendFile(path.join(__dirname, PUBLIC_DIR, "embed.js"));
