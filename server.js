@@ -24,7 +24,8 @@ app.use(bodyParser.json());
 const whitelist = [
   "https://granularity-app.nihalwashere.xyz",
   "https://granularity-web.nihalwashere.xyz",
-  "http://localhost:3000"
+  "http://localhost:3000",
+  "http://localhost:3001"
 ];
 
 app.use(
@@ -80,11 +81,12 @@ app.get("/logo_512.png", (req, res) => {
 
 app.get("/embed.js", (req, res) => {
   if (ENV === "PROD") {
-    res.status(200).sendFile(path.join(__dirname, PUBLIC_DIR, "embed.min.js"));
-  } else {
-    // LOCAL
-    res.status(200).sendFile(path.join(__dirname, PUBLIC_DIR, "embed.js"));
+    return res
+      .status(200)
+      .sendFile(path.join(__dirname, PUBLIC_DIR, "embed.min.js"));
   }
+
+  return res.status(200).sendFile(path.join(__dirname, PUBLIC_DIR, "embed.js"));
 });
 
 const server = app.listen(PORT, () => {

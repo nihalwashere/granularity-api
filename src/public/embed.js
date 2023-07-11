@@ -36,16 +36,17 @@ const createFrameElement = (id, params) => {
     }
   }
 
-  // const hostQueryParams = document.location.search;
+  const hostQueryParams = document.location.search;
 
-  // if (hostQueryParams !== "") {
-  //   queryParams += (queryParams === "" ? "?" : "&") + hostQueryParams.slice(1);
-  // }
+  if (hostQueryParams !== "") {
+    queryParams += (queryParams === "" ? "?" : "&") + hostQueryParams.slice(1);
+  }
 
   const url = id.startsWith("https")
     ? `${id}${queryParams}`
     : `https://granularity-app.nihalwashere.xyz/form/${id}`;
-    
+
+  // const url = `http://localhost:3000/form/${id}`  
 
   if (params.lazy) {
     frame.dataset.src = url;
